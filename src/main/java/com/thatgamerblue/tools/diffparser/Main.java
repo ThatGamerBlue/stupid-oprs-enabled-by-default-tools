@@ -17,6 +17,7 @@ public class Main
 
 	public static void main(String[] args) throws IOException
 	{
+		// this is from commit cbb5c509394c8f59109b435491b91ad7998e01a2
 		File file = new File("H:\\oprs-enabled-by-default\\commit.patch\\0001-client-Remove-all-plugins.patch");
 		List<String> diff = Files.readAllLines(file.toPath());
 		Patch<String> patches = UnifiedDiffUtils.parseUnifiedDiff(diff);
@@ -46,6 +47,7 @@ public class Main
 		parseRecursive(rootDir);
 	}
 
+	@SuppressWarnings({"ResultOfMethodCallIgnored", "ConstantConditions"})
 	private static void parseRecursive(File root) throws IOException
 	{
 		for (File f : root.listFiles())
